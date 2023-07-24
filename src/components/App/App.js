@@ -3,6 +3,7 @@ import React from 'react';
 import fetchTrick from '../apiCalls'
 import { useEffect, useState } from 'react'
 import TrickList from '../TrickList/TrickList'
+import NavBar from '../NavBar/NavBar'
 
 function App() {
   const [tricks, setTricks] = useState([])
@@ -16,7 +17,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(tricks)
     showTricks()
   }, [])
 
@@ -27,6 +27,7 @@ function App() {
         <h1>Sick Trick Wish List</h1>
       </div>
       <section>
+        <NavBar/>
         <TrickList data={tricks}/>
       </section>
     </main>
