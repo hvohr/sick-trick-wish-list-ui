@@ -19,9 +19,16 @@ function App() {
     )
   }
 
+  function addTrick(newTrick) {
+    return (
+      setTricks(...tricks, newTrick)
+    )
+  }
+
   useEffect(() => {
     showTricks()
   }, [])
+
 
 
   return (
