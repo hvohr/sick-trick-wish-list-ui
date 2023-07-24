@@ -30,7 +30,7 @@ function Form(props) {
   return (
     <form className='user-input-container'>
       <div className='stance-container'>
-        <select onChange={event => setStance(event.target.value)}>
+        <select className='stance-select' onChange={event => setStance(event.target.value)}>
           <option label="Choose Your Stance"></option>
           <option value="regular">Regular</option>
           <option value="switch">Switch</option>
@@ -38,7 +38,7 @@ function Form(props) {
       </div>
       <div className='trick-name-container'>
         <input
-          type='text'
+          type='textArea'
           placeholder="Name of Trick"
           name="trick"
           value={name}
@@ -46,7 +46,7 @@ function Form(props) {
         />
       </div>
       <div className='obstacle-container'>
-        <select onChange={event => setObstacle(event.target.value)}>
+        <select className='obstacle-select' onChange={event => setObstacle(event.target.value)}>
           <option label="Choose Your Obstacle"></option>
           <option value="Flatground">Flatground</option>
           <option value="Ledge">Ledge</option>
@@ -64,7 +64,7 @@ function Form(props) {
           onChange={event => setTutorialLink(event.target.value)}
         />
       </div>
-      <button onClick={event => submitTrick(event)}>Send It!</button>
+      <button type="submit" onClick={event => submitTrick(event)}>Send It!</button>
     </form>
   )
 }
