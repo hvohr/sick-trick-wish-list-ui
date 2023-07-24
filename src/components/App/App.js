@@ -34,8 +34,10 @@ function App() {
         <h1>Sick Trick Wish List</h1>
       </div>
       <section>
-        <Form addTrick={addTrick}/>
-        {tricks.length !==0 && <TrickList data={tricks}/>}
+        <Form addTrick={addTrick} />
+        <div className='trick-display'>
+          {tricks.length !== 0 && <TrickList data={tricks} />}
+        </div>
       </section>
     </main>
   );

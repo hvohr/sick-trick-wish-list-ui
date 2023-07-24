@@ -4,4 +4,19 @@
   justify-content: center;
   margin: 20px;
   padding: 10px;
+  justify-content: space-around;
+}
+
+
+input,
+select,
+button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Fredoka One', cursive;
+}
+
+button {
+  background-color:rgb(227, 222, 222);
 }
