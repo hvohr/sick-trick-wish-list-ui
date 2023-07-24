@@ -3,10 +3,13 @@ import React from 'react';
 import fetchTrick from '../apiCalls'
 import { useEffect, useState } from 'react'
 import TrickList from '../TrickList/TrickList'
-import NavBar from '../NavBar/NavBar'
+import Form from '../Form/Form'
 
 function App() {
   const [tricks, setTricks] = useState([])
+  const [stance, setStance] = useState('')
+  const [obstacle, setObstacle] = useState('')
+  const [link, setLink] = useState('')
 
   function showTricks() {
     return (
@@ -27,7 +30,7 @@ function App() {
         <h1>Sick Trick Wish List</h1>
       </div>
       <section>
-        <NavBar/>
+        <Form />
         <TrickList data={tricks}/>
       </section>
     </main>
