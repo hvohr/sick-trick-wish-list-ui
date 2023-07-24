@@ -3,12 +3,14 @@ import { useState } from 'react'
 
 function Form() {
   const [trickName, setTrickName] = useState('')
+  const [stance, setStance] = useState('')
+  const [obstacle, setObstacle] = useState('')
   const [tutorialLink, setTutorialLink] = useState('')
-  
+
   return (
     <form className='user-input-container'>
       <div className='stance-container'>
-        <select>
+        <select onChange={event => setStance(event.target.value)}>
           <option label="Choose Your Stance"></option>
           <option value="regular">Regular</option>
           <option value="switch">Switch</option>
@@ -24,7 +26,7 @@ function Form() {
         />
       </div>
       <div className='obstacle-container'>
-        <select>
+        <select onChange={event => setObstacle(event.target.value)}>
           <option label="Choose Your Obstacle"></option>
           <option value="Flatground">Flatground</option>
           <option value="Ledge">Ledge</option>
