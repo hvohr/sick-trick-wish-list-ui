@@ -1,27 +1,35 @@
 import './App.css';
 import React from 'react';
 import fetchTrick from '../apiCalls'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import TrickList from '../TrickList/TrickList'
 
 function App() {
+  const [tricks, setTricks] = useState([])
 
-function showTricks() {
-  return (
-    fetchTrick().then(
-      data => console.log(data)
+  function showTricks() {
+    return (
+      fetchTrick().then(
+        data => setTricks(data)
+      )
     )
-  )
-}
+  }
 
-useEffect(() => {
-  showTricks()
-}, [])
-  
+  useEffect(() => {
+    console.log(tricks)
+    showTricks()
+  }, [])
+
 
   return (
-    <div className="App">
-      <h1>Sick Trick Wish List</h1>
-    </div>
+    <main>
+      <div className="App">
+        <h1>Sick Trick Wish List</h1>
+      </div>
+      <section>
+        <TrickList data={tricks}/>
+      </section>
+    </main>
   );
 }
 
