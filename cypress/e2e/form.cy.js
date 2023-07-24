@@ -3,6 +3,11 @@ beforeEach(() => {
     statusCode: 200,
     fixture: 'tricks.json'
   })
-  .as('tricks')
-  .visit("http://localhost:3000/")
+    .as('tricks')
+    .visit("http://localhost:3000/")
+})
+describe('Form should have correct aspects', () => {
+  it('should have two selects and two inputs', () => {
+    
+  })
 })
