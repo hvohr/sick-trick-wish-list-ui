@@ -1,0 +1,7 @@
+.trick-card-container {
+  background-color:aliceblue;
+  display: flex;
+  margin: 10px;
+  width:fit-content;
+  height:fit-content;
+}

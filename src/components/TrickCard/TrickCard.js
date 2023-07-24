@@ -1,10 +1,11 @@
+import './TrickCard.css'
 
-function TrickCard() {
+function TrickCard(props) {
   return (
-    <section>
-      <h2 clasName='trick-name'>name</h2>
-      <h2 clasName='trick-name'>obstacle</h2>
-      <h2 clasName='trick-name'>link</h2>
+    <section className='trick-card-container'>
+      <h2 clasName='trick-name'>{props.name}</h2>
+      <h2 clasName='trick-name'>{props.obstacle}</h2>
+      <h2 clasName='trick-name'>{props.link}</h2>
     </section>
   )
 }
