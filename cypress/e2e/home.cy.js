@@ -12,4 +12,10 @@ describe('Front page should have proper aspects', () => {
       .get('h1')
       .contains('Sick Trick Wish List')
   })
+  it('should have fetched data', () => {
+    cy.wait('@tricks')
+      .get('.trick-display')
+      .get('.trick-list-container')
+      .get('.trick-card-container').should('exist')
+  })
 })
