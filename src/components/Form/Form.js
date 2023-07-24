@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 function Form() {
   const [trickName, setTrickName] = useState('')
+  const [tutorialLink, setTutorialLink] = useState('')
+  
   return (
     <form className='user-input-container'>
       <div className='stance-container'>
@@ -31,6 +33,16 @@ function Form() {
           <option value="Pool">Pool</option>
         </select>
       </div>
+      <div className='tutorial-link-container'>
+        <input
+          type='text'
+          placeholder="Link to Tutorial"
+          name="link"
+          value={tutorialLink}
+          onChange={event => setTutorialLink(event.target.value)}
+        />
+      </div>
+      <button>Send It!</button>
     </form>
   )
 }
