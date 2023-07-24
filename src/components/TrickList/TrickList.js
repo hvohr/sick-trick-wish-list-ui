@@ -4,7 +4,12 @@ import './TrickList.css'
 function TrickList(props) {
   let filteredTricks = props.data.map((prop) => {
     return (
-      <TrickCard key={prop.id} id={prop.id} name={prop.name} obstacle={prop.obstacle} stance={prop.stance} link={prop.tutorial} />
+      <TrickCard
+        id={prop.id}
+        name={prop.name}
+        obstacle={prop.obstacle}
+        stance={prop.stance}
+        link={prop.tutorial} />
     )
   })
   return (

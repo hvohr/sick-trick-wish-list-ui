@@ -1,11 +1,31 @@
 import './Form.css'
 import { useState } from 'react'
 
-function Form() {
-  const [trickName, setTrickName] = useState('')
+function Form(props) {
+  const [name, setTrickName] = useState('')
   const [stance, setStance] = useState('')
   const [obstacle, setObstacle] = useState('')
-  const [tutorialLink, setTutorialLink] = useState('')
+  const [tutorial, setTutorialLink] = useState('')
+
+  function submitTrick(event) {
+    event.preventDefault()
+    const newTrick = {
+      id: Date.now(),
+      name,
+      obstacle,
+      stance,
+      tutorial
+    }
+    props.addTrick(newTrick)
+    clearForm()
+  }
+
+  function clearForm() {
+    setTrickName('')
+    setObstacle('')
+    setTutorialLink('')
+    setStance('')
+  }
 
   return (
     <form className='user-input-container'>
@@ -21,7 +41,7 @@ function Form() {
           type='text'
           placeholder="Name of Trick"
           name="trick"
-          value={trickName}
+          value={name}
           onChange={event => setTrickName(event.target.value)}
         />
       </div>
@@ -40,11 +60,11 @@ function Form() {
           type='text'
           placeholder="Link to Tutorial"
           name="link"
-          value={tutorialLink}
+          value={tutorial}
           onChange={event => setTutorialLink(event.target.value)}
         />
       </div>
-      <button>Send It!</button>
+      <button onClick={event => submitTrick(event)}>Send It!</button>
     </form>
   )
 }
